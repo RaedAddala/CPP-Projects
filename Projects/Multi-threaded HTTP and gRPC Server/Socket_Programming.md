@@ -8,7 +8,7 @@
 
 ## What are Sockets?
 
-- A **socket** is an endpoint of a **two way** communication link between two programs running on the network 
+- A **socket** is an endpoint of a **two way** communication link between two programs running on the network
 
 - Each socket has a specific address, composed of an IP address and a port number (155.92.4.16:1625)
 
@@ -18,13 +18,10 @@
 
 2. The client creates a socket and then attempts to connect to the server socket.  
 
-3. When the connection is estanlished, transfer of data takes place. 
+3. When the connection is estanlished, transfer of data takes place.
 
-## Types of sockets 
+## Types of sockets
 
 1. **Stream socket**: (like **TCP**) ensuring that all information is delivered correctly.  
 
 2. **Datagram socket**: (like **UDP**) they are faster but might get lost.  
-
-
- 
