@@ -37,7 +37,24 @@ C++ organizes language types into two main categories:
 
 - The `auto` keyword was reintroduced in C++11 to simplify type declarations. In earlier versions of C++, `auto` was used to indicate automatic storage duration, which was the default and rarely explicitly stated. The modern usage allows for type inference, making code more concise and maintainable.
 
-## C++ Operators
+## Ranged for Loop
+
+- **classic for loop**
+
+```cpp
+for (i=0,i<3,i++)
+  std::cout<<i<<std::endl;
+```
+
+- **ranged for loop**
+
+```cpp
+arr[3] = {1,2,3};
+for (int i : arr)
+  std::cout<<i<<std::endl;
+```
+
+## enum
 
 ```cpp
 enum color_t {BLACK, BLUE, GREEN};
