@@ -382,3 +382,55 @@ int& d = c;
 A& ref = a; 
 ref.x; 
 ```
+
+## Data structure Alignment 
+- **Data structure alignment** is a way data is arranged and accessed in computer memory.  
+
+- **Data alignment** means putting data in memory at an address equal to some multiple of the word size.  
+
+- **Data structure Padding** : To align data, it may be necessaryto insert some extra bytes between the end of the last data structure and the start of the next data structure as data is placed in memory as multiples of fixed word size.
+
+```cpp
+struct 
+{
+    char a;          // 1 byte
+    short int b;     // 2 bytes
+    int c;           // 4 bytes 
+    char d;
+}
+```
+- you may think that the processor will allocate memory in this structure as shown below:
+![image](https://github.com/user-attachments/assets/e256f404-a7bf-4299-a7ab-be92dc1bcb8e)
+
+- The correct way pf allocation memory is shown below for this structure using padding bytes:
+![image](https://github.com/user-attachments/assets/fbf8d360-e661-4c8b-a910-58bc83182977)
+
+### Packing a struct?
+
+- To avoid adding paddings between members for alignment purposes, we can arrange members of a structure in memory so that there is no extra space left using struct packing.
+
+- Pack a struct in C by using the `#pragma directive`, this directive is applied to all structures defined after it, until the compiler encounters a different #pragma pack directive or the end of file.  
+
+```cpp
+// C++ Program to show how to Pack a Struct 
+#include <stdio.h> 
+  
+// Pack struct members on 1-byte boundaries 
+#pragma pack(1) 
+  
+struct PackedStruct { 
+    char a; // 1 byte 
+    int b; // 4 bytes 
+    double c; // 8 bytes 
+};
+```
+- You can apply strucy packing directly to a specific structure definition by using `__attribute__((__packed__))`:  
+```cpp
+struct MyStruct {
+    char a;
+    int b;
+} __attribute__((__packed__));
+```
+
+
+
